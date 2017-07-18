@@ -1,0 +1,13 @@
+applications:
+- name: stevemicroservice
+  path: ./target/stevemicroservice.zip
+  memory: 512M
+  timeout: 180
+  instances: 1
+  buildpack: liberty-for-java
+  host: steveservice
+  domain: eu-gb.mybluemix.net
+  services:
+  - stevemicroservice-cloudantNoSQLDB-36b3
+env:
+  services_autoconfig_excludes: cloudantNoSQLDB=config
